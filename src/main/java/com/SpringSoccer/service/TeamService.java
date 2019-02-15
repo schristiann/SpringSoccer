@@ -66,4 +66,6 @@ public class TeamService {
     public void deletePlayer(Player player){
         this.playerRepository.delete(player);
     }
+
+    public Iterable<Player> getAllPlayers() {return this.playerRepository.findAll(); }
 }

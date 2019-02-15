@@ -49,4 +49,7 @@ public class Player {
         return tid;
     }
 
+    public void setTeam(String team) {
+        this.team = team;
+    }
 }
