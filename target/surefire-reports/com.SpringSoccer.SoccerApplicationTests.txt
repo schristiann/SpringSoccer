@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.SpringSoccer.SoccerApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.637 s - in com.SpringSoccer.SoccerApplicationTests

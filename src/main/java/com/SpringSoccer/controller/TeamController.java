@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,6 +34,31 @@ public class TeamController {
         List<Team> teams=this.teamService.getTeams();
         HttpHeaders header=new HttpHeaders();
         return new ResponseEntity(teams,header, HttpStatus.OK);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value="/search/{term}")
+    public ResponseEntity<List<Player>> search(Model model, @PathVariable ("term") String term) {
+
+
+
+        Iterable<Player> players = teamService.getAllPlayers();
+
+        term.toLowerCase();
+
+        List<Player> allPlayers = new ArrayList<>();
+
+        for (Player player : players) {
+            if (player.getPlayerName().toLowerCase().contains(term)) {
+                allPlayers.add(player);
+            }
+        }
+
+
+
+        HttpHeaders header = new HttpHeaders();
+
+        return new ResponseEntity<>(allPlayers, header, HttpStatus.OK);
+
     }
 
     @CrossOrigin

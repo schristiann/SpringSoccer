@@ -13,5 +13,7 @@ import java.util.List;
 public interface PlayerRepository extends CrudRepository<Player, Integer> {
     Player findById(int id);
 
+    Iterable<Player> findByTid(int tid);
+
     Iterable<Player> findAll();
 }

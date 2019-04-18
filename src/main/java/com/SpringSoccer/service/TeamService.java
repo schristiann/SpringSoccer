@@ -42,14 +42,15 @@ public class TeamService {
     public Set<Player> getPlayers(int teamId){
 
 
-        Iterable<Player> players= this.playerRepository.findAll();
+        Iterable<Player> players= this.playerRepository.findByTid(teamId);
 
         Set<Player> roster= new HashSet<>();
 
         for(Player player: players){
-            if(player.getTid()==teamId){
-                roster.add(player);
-            }
+//            if(player.getTid()==teamId){
+//                roster.add(player);
+//            }
+            roster.add(player);
         }
 
         return roster;

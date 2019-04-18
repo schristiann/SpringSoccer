@@ -19,36 +19,36 @@ import java.util.List;
  */
 @RestController
 @CrossOrigin
-@RequestMapping(value="/search")
+// @RequestMapping(value="/search")
 public class PlayerController {
 
-    @Autowired
-    private TeamService teamService;
-
-    @RequestMapping(method = RequestMethod.GET, value="/{term}")
-    public ResponseEntity<List<Player>> search(Model model, @PathVariable ("term") String term) {
-
-
-
-        Iterable<Player> players = teamService.getAllPlayers();
-
-        term.toLowerCase();
-
-        List<Player> allPlayers = new ArrayList<>();
-
-            for (Player player : players) {
-                if (player.getPlayerName().toLowerCase().contains(term)) {
-                    allPlayers.add(player);
-                }
-            }
-
-
-
-        HttpHeaders header = new HttpHeaders();
-
-        return new ResponseEntity<>(allPlayers, header, HttpStatus.OK);
-
-    }
+//    @Autowired
+//    private TeamService teamService;
+//
+//    @RequestMapping(method = RequestMethod.GET, value="/{term}")
+//    public ResponseEntity<List<Player>> search(Model model, @PathVariable ("term") String term) {
+//
+//
+//
+//        Iterable<Player> players = teamService.getAllPlayers();
+//
+//        term.toLowerCase();
+//
+//        List<Player> allPlayers = new ArrayList<>();
+//
+//            for (Player player : players) {
+//                if (player.getPlayerName().toLowerCase().contains(term)) {
+//                    allPlayers.add(player);
+//                }
+//            }
+//
+//
+//
+//        HttpHeaders header = new HttpHeaders();
+//
+//        return new ResponseEntity<>(allPlayers, header, HttpStatus.OK);
+//
+//    }
 
 
 }
